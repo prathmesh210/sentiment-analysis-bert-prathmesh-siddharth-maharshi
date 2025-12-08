@@ -27,3 +27,24 @@ Prathmesh – data extraction, metrics, docs
 Siddhart – data processing, inference, CI
 
 Maharshi – model training
+
+
+## 🚀 Docker Usage
+
+### Build the image
+docker build -t prathmesh210/sentiment-app .
+
+### Run inference
+docker run prathmesh210/sentiment-app --text "I love this project"
+
+## 🔄 CI/CD Pipeline
+
+- `test.yml` → Runs pytest on every push or PR  
+- `evaluate.yml` → Evaluates model, uploads metrics  
+- `build.yml` → Builds and pushes Docker image after tests pass  
+
+## 👥 Team Roles
+- Prathmesh → Dockerfile, Docker build workflow, CI/CD docs  
+- Siddhart → Docker Compose, Tests workflow  
+- Maharshi → Evaluation workflow, model volumes  
+
