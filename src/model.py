@@ -1,11 +1,6 @@
-from transformers import (
-    AutoModelForSequenceClassification,
-    AutoTokenizer,
-    Trainer,
-    TrainingArguments,
-)
-from torch.utils.data import Dataset
-import torch
+# src/model.py
+
+from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
 MODEL_NAME = "distilbert-base-uncased"
 NUM_LABELS = 2
@@ -20,46 +15,3 @@ def get_model(model_name: str = MODEL_NAME, num_labels: int = NUM_LABELS):
         model_name,
         num_labels=num_labels
     )
-
-
-class SimpleTextDataset(Dataset):
-    def __init__(self, encodings, labels):
-        self.encodings = encodings
-        self.labels = labels
-
-    def __len__(self):
-        return len(self.labels)
-
-    def __getitem__(self, idx):
-        item = {k: torch.tensor(v[idx]) for k, v in self.encodings.items()}
-        item["labels"] = torch.tensor(self.labels[idx])
-        return item
-
-
-def train_model(train_texts, train_labels, output_dir: str = "./model_out"):
-    tokenizer = get_tokenizer()
-    train_encodings = tokenizer(
-        train_texts,
-        truncation=True,
-        padding=True
-    )
-    train_dataset = SimpleTextDataset(train_encodings, train_labels)
-
-    model = get_model()
-
-    training_args = TrainingArguments(
-        output_dir=output_dir,
-        per_device_train_batch_size=8,
-        num_train_epochs=1,
-        logging_steps=10,
-        save_strategy="no"
-    )
-
-    trainer = Trainer(
-        model=model,
-        args=training_args,
-        train_dataset=train_dataset
-    )
-
-    trainer.train()
-    return model
