@@ -84,7 +84,7 @@ The project follows this workflow:
 ```
 git clone https://github.com/prathmesh210/sentiment-analysis-bert-prathmesh-siddharth-maharshi.git
 cd sentiment-analysis-bert-prathmesh-siddharth-maharshi
-
+```
 
 ### 2. Create and activate virtual environment
 
