@@ -9,7 +9,7 @@ This project builds an end-to-end sentiment analysis pipeline using BERT. It inc
 - CI/testing
 
 ## Setup
-```bash
+
 python -m venv venv
 venv\Scripts\activate   # Windows
 # or source venv/bin/activate on Mac/Linux
@@ -223,18 +223,6 @@ These metrics are computed during the evaluation workflow and help validate mode
 This project demonstrates a complete MLOps lifecycle for a machine learning application, from development and testing to automated evaluation and containerized deployment.
 It highlights best practices for reproducibility, automation, and collaboration in real-world ML systems.
 
-````
 
 ---
-
-## ✅ What to do next (VERY IMPORTANT)
-
-1. Paste this into `README.md`
-2. Save
-3. Commit & push:
-```
-git add README.md
-git commit -m "Finalize README with full MLOps pipeline documentation"
-git push origin main
-````
 
