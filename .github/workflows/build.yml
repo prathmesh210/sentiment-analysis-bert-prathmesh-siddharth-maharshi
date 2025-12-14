@@ -1,13 +1,11 @@
 name: Build and Push Docker Image
 
 on:
-  workflow_run:
-    workflows: ["Tests"]
-    types: [completed]
+  push:
+    branches: [main]
 
 jobs:
   build-and-push:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
 
     steps:
@@ -28,4 +26,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/sentiment-app:latest
+          tags: prathmesh210/sentiment-app:latest
