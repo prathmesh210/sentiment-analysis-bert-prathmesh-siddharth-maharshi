@@ -9,11 +9,12 @@ This project builds an end-to-end sentiment analysis pipeline using BERT. It inc
 - CI/testing
 
 ## Setup
-
+```
 python -m venv venv
 venv\Scripts\activate   # Windows
 # or source venv/bin/activate on Mac/Linux
 pip install -r requirements.txt
+```
 
 How to run training
 python -c "from src.model import train_model; train_model(['good', 'bad'], [1, 0])"
@@ -54,7 +55,7 @@ You can **copy everything from the line below and paste it directly into `README
 
 ---
 
-````md
+
 # Sentiment Analysis using BERT – End-to-End MLOps Pipeline
 
 ## Overview
@@ -83,7 +84,7 @@ The project follows this workflow:
 ```
 git clone https://github.com/prathmesh210/sentiment-analysis-bert-prathmesh-siddharth-maharshi.git
 cd sentiment-analysis-bert-prathmesh-siddharth-maharshi
-````
+
 
 ### 2. Create and activate virtual environment
 
